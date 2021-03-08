@@ -1,5 +1,5 @@
 
-name = "DEGA: AH-99E Mohawk v1.0";
+name = "DEGA: AH-99E Mohawk v1.1";
 description = "DEGA: AH-99E Mohawk Modification";
 picture = "\dega_vehicles_ah99\data\release\logo_dega.paa";
 actionName = "";

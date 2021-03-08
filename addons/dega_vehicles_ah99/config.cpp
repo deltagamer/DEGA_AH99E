@@ -86,9 +86,9 @@ class CfgVehicles
 					};
 					class PylonLeft2: PylonLeft1
 					{
-						attachment = "PylonRack_4Rnd_LG_scalpel_AH99_2";
+						attachment = "PylonRack_5Rnd_LG_scalpel_AH99_2";
 						priority = 4;
-						hardpoints[] = {"SCALPEL_1RND", "B_ASRAAM", "SCALPEL_4RND_AH99_2", "PG_24RND_AH99_2"};
+						hardpoints[] = {"SCALPEL_1RND", "B_ASRAAM", "EXTERNAL_AH99_2"};
 						UIposition[] = {0.08, 0.35};
 					};
 					class PylonLeft3: PylonLeft1
@@ -105,8 +105,8 @@ class CfgVehicles
 					};
 					class PylonRight2: PylonLeft2
 					{
-						attachment = "PylonRack_4Rnd_LG_scalpel_AH99_1";	
-						hardpoints[] = {"SCALPEL_1RND", "B_ASRAAM", "SCALPEL_4RND_AH99_1", "PG_24RND_AH99_1"};						
+						attachment = "PylonRack_5Rnd_LG_scalpel_AH99_1";	
+						hardpoints[] = {"SCALPEL_1RND", "B_ASRAAM", "EXTERNAL_AH99_1"};						
 						mirroredMissilePos = 2;
 						UIposition[] = {0.62, 0.35};
 					};
@@ -155,48 +155,74 @@ class CfgVehicles
 class CfgMagazines
 {
     class 8Rnd_LG_scalpel;
-	//class 24Rnd_PG_missiles;
-	class PylonRack_4Rnd_LG_scalpel_AH99_1: 8Rnd_LG_scalpel
+	class 4Rnd_AAA_missiles;
+	class PylonRack_12Rnd_PG_missiles;
+	/// 4x Scalpel ///
+	class PylonRack_5Rnd_LG_scalpel_AH99_1: 8Rnd_LG_scalpel
 	{
 		displayName = "Scalpel 5x (External)";
 		count = 5;
-		hardpoints[] = {"SCALPEL_4RND_AH99_1"};
-		model = "\dega_vehicles_ah99\ah99_external_pylon_left.p3d";
+		hardpoints[] = {"EXTERNAL_AH99_1"};
+		model = "\dega_vehicles_ah99\ah99_external_pylon_left_5Rnd_LG_scalpel.p3d";
+		pylonWeapon = "missiles_SCALPEL_AH99";
+	};
+	class PylonRack_5Rnd_LG_scalpel_AH99_2: PylonRack_5Rnd_LG_scalpel_AH99_1
+	{
+		hardpoints[] = {"EXTERNAL_AH99_2"};		
+		model = "\dega_vehicles_ah99\ah99_external_pylon_right_5Rnd_LG_scalpel.p3d";
+	};
+	/// 3x Scalpel ///
+	class PylonRack_4Rnd_LG_scalpel_AH99_1: 8Rnd_LG_scalpel
+	{
+		displayName = "Scalpel 4x (External)";
+		count = 4;
+		hardpoints[] = {"EXTERNAL_AH99_1"};
+		model = "\dega_vehicles_ah99\ah99_external_pylon_left_4Rnd_LG_scalpel.p3d";
 		pylonWeapon = "missiles_SCALPEL_AH99";
 	};
 	class PylonRack_4Rnd_LG_scalpel_AH99_2: PylonRack_4Rnd_LG_scalpel_AH99_1
 	{
-		hardpoints[] = {"SCALPEL_4RND_AH99_2"};		
-		model = "\dega_vehicles_ah99\ah99_external_pylon_right.p3d";
-	};
-	/*
-	class PylonRack_24Rnd_PG_missiles_AH99_1: 24Rnd_PG_missiles
+		hardpoints[] = {"EXTERNAL_AH99_2"};		
+		model = "\dega_vehicles_ah99\ah99_external_pylon_right_4Rnd_LG_scalpel.p3d";
+	};	
+	/// Fuel Tanks ///
+	class PylonRack_1Rnd_LG_scalpel_fueltank_AH99_1: 8Rnd_LG_scalpel
 	{
-		displayName = "DAGR (External)";
-		count = 5;
-		hardpoints[] = {"PG_24RND_AH99_1"};
-		model = "\dega_vehicles_ah99\ah99_external_pylon_left.p3d";
+		displayName = "Scalpel (External Fuel Tank)";
+		count = 1;
+		hardpoints[] = {"EXTERNAL_AH99_1"};
+		model = "\dega_vehicles_ah99\ah99_external_pylon_left_fuel.p3d";
 		pylonWeapon = "missiles_SCALPEL_AH99";
 	};
-	class PylonRack_24Rnd_PG_missiles_AH99_2: PylonRack_24Rnd_PG_missiles_AH99_1
+	class PylonRack_1Rnd_LG_scalpel_fueltank_AH99_2: PylonRack_1Rnd_LG_scalpel_fueltank_AH99_1
 	{
-		hardpoints[] = {"PG_24RND_AH99_2"};		
-		model = "\dega_vehicles_ah99\ah99_external_pylon_right.p3d";
-	};	
-	*/
+		hardpoints[] = {"EXTERNAL_AH99_2"};		
+		model = "\dega_vehicles_ah99\ah99_external_pylon_right_fuel.p3d";
+	};
+	class PylonRack_1Rnd_AAA_fueltank_AH99_1: 4Rnd_AAA_missiles
+	{
+		displayName = "ASRAAM (External Fuel Tank)";
+		count = 1;
+		hardpoints[] = {"EXTERNAL_AH99_1"};
+		model = "\dega_vehicles_ah99\ah99_external_pylon_left_fuel.p3d";
+		pylonWeapon = "missiles_SCALPEL_AH99";
+	};
+	class PylonRack_1Rnd_AAA_fueltank_AH99_2: PylonRack_1Rnd_AAA_fueltank_AH99_1
+	{
+		hardpoints[] = {"EXTERNAL_AH99_2"};		
+		model = "\dega_vehicles_ah99\ah99_external_pylon_right_fuel.p3d";
+	};		
 };
 class CfgWeapons
 {
     class missiles_SCALPEL;
-	//class 24Rnd_PG_missiles;
+	class missiles_ASRAAM;
 	class missiles_SCALPEL_AH99: missiles_SCALPEL
 	{
-		magazines[] = {"PylonRack_4Rnd_LG_scalpel_AH99_1", "PylonRack_4Rnd_LG_scalpel_AH99_2"};
+		magazines[] = {"PylonRack_5Rnd_LG_scalpel_AH99_1","PylonRack_4Rnd_LG_scalpel_AH99_1", "PylonRack_1Rnd_LG_scalpel_fueltank_AH99_1", "PylonRack_5Rnd_LG_scalpel_AH99_2", "PylonRack_4Rnd_LG_scalpel_AH99_2", "PylonRack_1Rnd_LG_scalpel_fueltank_AH99_2"};
 	};
-	/*
-	class 24Rnd_PG_missiles_AH99: 24Rnd_PG_missiles
+	class missiles_ASRAAM_AH99: missiles_ASRAAM
 	{
-		magazines[] = {"PylonRack_24Rnd_PG_missiles_AH99_1", "PylonRack_24Rnd_PG_missiles_AH99_2"};
+		magazines[] = {"PylonRack_1Rnd_AAA_fueltank_AH99_1","PylonRack_1Rnd_AAA_fueltank_AH99_2"};
 	};	
-	*/
 };
